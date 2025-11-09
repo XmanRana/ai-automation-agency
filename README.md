@@ -1,33 +1,29 @@
-# Document Converter - SaaS
+# AI Automation Agency
 
-A production-ready Laravel document conversion SaaS using CloudConvert API.
-
-**Status:** ✅ Production Ready
+Full-stack automation platform with multiple tools.
 
 ---
 
-## 🎯 Features
+## 🛠️ Tools
 
-- ✅ **Word to PDF** - Convert DOCX to PDF
-- ✅ **Excel to PDF** - Convert XLSX to PDF  
-- ✅ **Image to PDF** - Convert JPG/PNG/GIF to PDF
-- ✅ **PDF to Word** - Convert PDF to DOCX
-- ✅ **Merge PDFs** - Combine multiple PDFs
+### 1. Document Converter
+- Word to PDF
+- PDF to Word
+- Excel to PDF
+- Image to PDF
+- Merge PDFs
+
+### 2. Email Generator
+- Generate professional emails
+- AI-powered templates
+
+### 3. Data Analyzer
+- Analyze data trends
+- Generate insights
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Backend:** Laravel 10
-- **API:** CloudConvert
-- **Database:** MySQL
-- **Storage:** Local filesystem
-
----
-
-## 📦 Quick Start
-
-### Backend Setup
+## 🚀 Quick Start
 
 ```bash
 # Clone repository
@@ -53,47 +49,21 @@ php artisan serve
 
 ---
 
-## 🔑 Configuration
-
-Add CloudConvert API key to `.env`:
-
-```env
-CLOUDCONVERT_KEY=your_api_key_here
-```
-
----
-
 ## 📚 API Endpoints
 
-**Upload File:**
+**Document Converter:**
 ```
 POST /api/upload
-Content-Type: multipart/form-data
-```
-
-**Convert Document:**
-```
 POST /api/convert
-{
-  "filename": "document.pdf",
-  "task": "pdf to word"
-}
-```
-
-**Merge PDFs:**
-```
 POST /api/merge-pdfs
-{
-  "files": ["file1.pdf", "file2.pdf"]
-}
 ```
 
----
+**Email Generator:**
+```
+POST /api/generate-email
+```
 
-## ✅ Tested Conversions
-
-- ✅ Word → PDF
-- ✅ Excel → PDF  
-- ✅ Image → PDF
-- ✅ PDF → Word
-- ✅ Merge PDFs
+**Data Analyzer:**
+```
+POST /api/analyze-data
+```
