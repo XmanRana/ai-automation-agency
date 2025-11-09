@@ -1,41 +1,99 @@
-# AI Automation Agency MVP
+# Document Converter - SaaS
 
-Full-stack AI automation platform with modular tool system, user authentication, and real-time chat interface.
+A production-ready Laravel document conversion SaaS using CloudConvert API.
+
+**Status:** ✅ Production Ready
+
+---
 
 ## 🎯 Features
 
-- **User Authentication** - Secure register/login with Laravel Sanctum
-- **Email Generator** - Create professional emails using AI
-- **Document Processor** - Extract and process documents
-- **Data Analyzer** - Analyze data patterns and trends
-- **Real-time Chat Interface** - Beautiful dark-themed UI
-- **RESTful API** - Modular tool system
+- ✅ **Word to PDF** - Convert DOCX to PDF
+- ✅ **Excel to PDF** - Convert XLSX to PDF  
+- ✅ **Image to PDF** - Convert JPG/PNG/GIF to PDF
+- ✅ **PDF to Word** - Convert PDF to DOCX
+- ✅ **Merge PDFs** - Combine multiple PDFs
+
+---
 
 ## 🛠️ Tech Stack
 
-### Backend
-- **Framework:** Laravel 12
+- **Backend:** Laravel 10
+- **API:** CloudConvert
 - **Database:** MySQL
-- **Auth:** Laravel Sanctum (API tokens)
-- **Language:** PHP 8.2
-- **HTTP Server:** Apache/Nginx
+- **Storage:** Local filesystem
 
-### Frontend
-- **Framework:** React 18 with Hooks
-- **Build Tool:** Vite
-- **HTTP Client:** Axios
-- **UI:** Tailwind CSS (inline styles)
-- **Language:** JavaScript ES6+
+---
 
-## 📋 Prerequisites
+## 📦 Quick Start
 
-- PHP 8.2+
-- Composer
-- Node.js 16+
-- npm or yarn
-- MySQL 8.0+
+### Backend Setup
 
-## 🚀 Quick Start
+```bash
+# Clone repository
+git clone https://github.com/XmanRana/ai-automation-agency.git
+cd ai-automation-agency
 
-### 1. Backend Setup
+# Install dependencies
+composer install
 
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Create symlink
+php artisan storage:link
+
+# Run migrations
+php artisan migrate
+
+# Start server
+php artisan serve
+```
+
+---
+
+## 🔑 Configuration
+
+Add CloudConvert API key to `.env`:
+
+```env
+CLOUDCONVERT_KEY=your_api_key_here
+```
+
+---
+
+## 📚 API Endpoints
+
+**Upload File:**
+```
+POST /api/upload
+Content-Type: multipart/form-data
+```
+
+**Convert Document:**
+```
+POST /api/convert
+{
+  "filename": "document.pdf",
+  "task": "pdf to word"
+}
+```
+
+**Merge PDFs:**
+```
+POST /api/merge-pdfs
+{
+  "files": ["file1.pdf", "file2.pdf"]
+}
+```
+
+---
+
+## ✅ Tested Conversions
+
+- ✅ Word → PDF
+- ✅ Excel → PDF  
+- ✅ Image → PDF
+- ✅ PDF → Word
+- ✅ Merge PDFs
