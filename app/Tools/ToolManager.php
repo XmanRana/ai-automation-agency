@@ -18,6 +18,7 @@ class ToolManager
         $this->tools['Email Generator'] = new EmailGeneratorTool();
         $this->tools['Document Processor'] = new DocumentProcessorTool();
         $this->tools['Data Analyzer'] = new DataAnalyzerTool();
+        $this->tools['Document Converter'] = new DocumentConverterTool(); // ADD THIS LINE
     }
 
     public function getTool(string $name): ?ToolInterface

@@ -63,3 +63,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
         return response()->json(['message' => 'Logout successful']);
     });
 });
+Route::post('/upload', [\App\Http\Controllers\DocumentController::class, 'upload']);
+Route::post('/convert', [App\Http\Controllers\DocumentController::class, 'convert']);
